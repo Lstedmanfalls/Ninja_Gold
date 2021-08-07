@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Ninja Gold</h1>
+        <div id="gold_amt">
+            <p>Gold Earned:</p>
+            <div>{{request.session.gold_amt}}</div>
+        </div>
+        <div id="locations">
+            <div>
+                <h2>Farm</h2>
+                <p>(Earn 10 to 20 Gold)</p>
+                <form action ="process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="location" value="farm">
+                    <button type="submit">Find Gold at the Farm</button>
+                </form>
+            </div>
+            <div>
+                <h2>Cave</h2>
+                <p>(Earn 5 to 10 Gold)</p>
+                <form action ="process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="location" value="cave">
+                    <button type="submit">Find Gold at the Cave</button>
+                </form>
+            </div>
+            <div>
+                <h2>House</h2>
+                <p>(Earn 2 to 5 Gold)</p>
+                <form action ="process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="location" value="house">
+                    <button type="submit">Find Gold at the House</button>
+                </form>
+            </div>
+            <div>
+                <h2>Casino</h2>
+                <p>(Earn or Lose 0 to 50 gold)</p>
+                <form action ="process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name ="location" value="casino">
+                    <button type="submit">Find Gold at the Casino</button>
+                </form>
+            </div>
+        </div>
+        <form action="reset" method="POST">
+            {% csrf_token %}
+            <button type="submit">Reset</button>
+        </form>
+        <h2 id ="act_label">Your Activity</h2>  
+        <div id="activity">
+            {% for item in request.session.activity %}<p>{{item}}</p>{% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    background-color: lightblue;
+}
+
+html{
+    font-size:10px;
+}
+
+#wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    padding:4rem;
+    font-size:6rem;
+}
+
+#gold_amt{
+    display: flex;
+    width:80%;
+}
+
+#gold_amt > p {
+    font-size:3rem;
+    font-weight: bold;
+    padding:1rem 2rem 1rem 0;
+}
+
+#gold_amt > div{
+    width:10rem;
+    background-color: whitesmoke;
+    border:.02rem solid black;
+    font-size:4rem;
+    text-align: center;
+}
+
+#locations{
+    display:flex;
+    justify-content: space-between;
+    padding:4rem;
+    width:80%;
+}
+
+h2{
+    font-size:4rem;
+    background-color: lightsalmon;
+}
+
+#locations p{
+    font-size:2rem;
+    padding:2rem;
+    background-color: lightsalmon;
+}
+
+#locations > div{
+    padding:3rem;
+    text-align: center;
+    background-color: lightsalmon;
+    border:.02rem solid black;
+}
+
+button{
+    font-size:2.5rem;
+    background-color: lightgoldenrodyellow;
+    padding:1rem;
+    box-shadow:.2rem .2rem .2rem gray;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: gold;
+}
+
+#activity{
+    margin-top: 3rem;
+    background-color: whitesmoke;
+    width:50%;
+    height:25rem;
+    border: 0.2rem solid black;
+    overflow: scroll;
+}
+
+#activity > p{
+    font-size:2rem;
+    background-color: whitesmoke;
+    padding:.5rem 2rem;
+}
+
+#act_label{
+    text-align: center;
+    padding-top:2rem;
+    background-color: lightblue;
+}
