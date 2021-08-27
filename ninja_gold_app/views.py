@@ -24,9 +24,8 @@ def process_money(request):
         request.session['gold_amt'] += gold[location]
         if gold[location] < 0:
             message = f"You earned {gold[location]} gold from the {location} on {date_time}. You should stop gambling!"
-
         else:
-            message = f"You earned {gold[location]} gold from the {location} on {date_time}. You should stop gambling!"
+            message = f"You earned {gold[location]} gold from the {location} on {date_time}. Nice!"
 
         request.session['activity'].append(message)
     else:
