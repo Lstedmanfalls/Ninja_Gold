@@ -81,7 +81,8 @@ button:hover{
     width:50%;
     height:25rem;
     border: 0.2rem solid black;
-    overflow: scroll;
+    overflow-x:hidden;
+    overflow-y: auto;
 }
 
 #activity > p{
